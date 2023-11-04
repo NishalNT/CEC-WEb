@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <img src="images/lll.png" />
+        <div class="menu-btn">
+            <i class="fa-solid fa-bars" onclick="changeIcon(this)"></i>
+        </div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">Home</a>
+                <a href="#">About us</a>
+                <a href="#">Admissions</a>
+                <a href="#">Departments</a>
+                <a href="#">Faculties</a>
+                <a href="#">Students</a>
+            </div>
+        </div>
+    </header>
+    <section class="home">
+        <video class="video-slide active" src="images/library_-_846 (720p).mp4" autoplay muted loop></video>
+        <video class="video-slide" src="images/istockphoto-1364811900-640_adpp_is.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="images/istockphoto-1443933937-640_adpp_is.mp4" autoplay muted loop></video>
+        <div class="content active">
+            <h1>Resource<br><span>Library</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id accusantium quam consequuntur dignissimos
+                quod, voluptatem deserunt. Impedit quis delectus non?
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos et nam maxime expedita! Veritatis
+                autem, iste inventore iusto pariatur recusandae.
+            </p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Tasty<br><span>Food</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id accusantium quam consequuntur dignissimos
+                quod, voluptatem deserunt. Impedit quis delectus non?
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos et nam maxime expedita! Veritatis
+                autem, iste inventore iusto pariatur recusandae.
+            </p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Large<br><span>College</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id accusantium quam consequuntur dignissimos
+                quod, voluptatem deserunt. Impedit quis delectus non?
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos et nam maxime expedita! Veritatis
+                autem, iste inventore iusto pariatur recusandae.
+            </p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="header"></div>
+        <div class="card one">
+            hello
+        </div>
+        <div class="card two">
+            <h4>Courses Offered</h2>
+                <img src="images/course.png" alt="png">
+        </div>
+        <div class="card three">three</div>
+    </section>
+    
+    <section>
+        <div class="footer">Footer</div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+
+        let changeIcon = function (icon) {
+            icon.classList.toggle("fa-x");
+        }
+
+
+        //scroll
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+
+        let currentSlide = 1;
+
+        var sliderNav = function (manual) {
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+
+         
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+                currentSlide = i;
+            });
+        });
+
+
+        var repeat = function (activeClass) {
+            let active = document.getElementsByClassName('.active');
+
+            let i = 1;
+
+            var repeater = () => {
+                setTimeout(function () {
+                    // [...active].forEach((activeSlide) => {
+                    //     activeSlide.classList.remove('active');
+                    // });
+                    contents.forEach((content) => {
+                        content.classList.remove("active");
+                    });
+                    slides.forEach((slide) => {
+                        slide.classList.remove("active");
+                    });
+                    btns.forEach((btn) => {
+                        btn.classList.remove("active");
+                    });
+                    
+
+                    slides[i].classList.add('active');
+                    contents[i].classList.add('active');
+                    btns[i].classList.add('active');
+                    i++;
+
+                    if (slides.length == i) {
+                        i = 0;
+                    }
+                    if (i >= slides.length) {
+                        return;
+                    }
+                    repeater();
+                }, 10000);
+            }
+            repeater();
+        }
+
+        repeat();
+
+
+        //sticky header
+
+        window.addEventListener("scroll", function () {
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 0);
+        })
+
+    </script>
+    <script src="https://kit.fontawesome.com/1373b730aa.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
