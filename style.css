@@ -444,10 +444,17 @@ button:hover{
 }
 
 .card.one > .about-divs {
+  margin-top: 50px;
   width: 400px;
   min-width: 200px;
   height: auto;
   flex: 1 1 auto;
+}
+
+.card.one > h1 {
+  position: absolute;
+  top: 60px;
+  font-size: 40px;
 }
 
 @media (max-width: 1040px) {
@@ -466,5 +473,11 @@ button:hover{
   .card.one > .mission {
     position: absolute;
     top: 950px;
+    padding-bottom: 30px;
+  }
+  .card.one > h1 {
+    position: absolute;
+    top: 50px;
+    font-size: 36px;
   }
 }
