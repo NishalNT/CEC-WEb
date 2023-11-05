@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 header {
   z-index: 999;
   position: absolute;
@@ -467,7 +471,6 @@ section .achivements {
 
 .footer {
   width: 100vw;
-  /* height: 300px; */
   background-color: #0b509d;
   color: white;
 }
@@ -654,6 +657,29 @@ section .achivements {
   border: 2px solid white;
 }
 
+.crd.four {
+  display: block;
+  background-color: #4e4ba9;
+  height: 80%;
+  padding: 120px;
+}
+
+.crd.four > h1 {
+  padding: 30px;
+  font-size: 40px;
+}
+.desk-div {
+  display: flex;
+  gap: 50px;
+  padding: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.desk-div > .desk-divs {
+  flex: 1 1 0;
+}
+
 @media (max-width: 1040px) {
   header {
     padding: 12px 20px;
@@ -786,7 +812,7 @@ section .achivements {
 
 .crd.one > .about-divs {
   margin-top: 50px;
-  width: 400px;
+  width: 390px;
   min-width: 200px;
   height: auto;
   /* flex: 1 1 auto; */
@@ -805,9 +831,12 @@ section .achivements {
   .slide > .c-info > p {
     font-size: 15px;
   }
+  .slide > .c-info {
+    max-width: 100%;
+  }
   .crd.one {
     flex-direction: column;
-    /* overflow: scroll; */
+    overflow: hidden;
   }
   .example::-webkit-scrollbar {
     display: none;
@@ -818,11 +847,11 @@ section .achivements {
   }
   .crd.one > .vision {
     position: absolute;
-    top: 350px;
+    top: 320px;
   }
   .crd.one > .mission {
     position: absolute;
-    top: 630px;
+    top: 570px;
   }
   .crd.one > h1 {
     position: absolute;
@@ -858,6 +887,9 @@ section .achivements {
   .image-slider .slide img {
     padding: 10px;
     border-radius: 20px;
+  }
+  .crd.four > .desk-div {
+    flex-direction: column;
   }
 }
 
