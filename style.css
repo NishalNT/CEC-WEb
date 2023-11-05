@@ -962,28 +962,35 @@ section .achivements {
   }
   .crd.one {
     flex-direction: column;
-    overflow: scroll;
+    /* overflow: scroll; */
   }
   .example::-webkit-scrollbar {
     display: none;
   }
   .crd.one > .is {
     position: absolute;
-    top: 100px;
+    top: 70px;
   }
   .crd.one > .vision {
     position: absolute;
-    top: 530px;
+    top: 350px;
   }
   .crd.one > .mission {
     position: absolute;
-    top: 950px;
-    padding-bottom: 30px;
+    top: 630px;
   }
   .crd.one > h1 {
     position: absolute;
     top: 50px;
     font-size: 36px;
+  }
+  .crd.one > .about-divs > .ainfo {
+    position: absolute;
+    top: 23%;
+    color: white;
+  }
+  .crd.one > .about-divs > img {
+    filter: brightness(47%) contrast(90%);
   }
   header img {
     height: 70px;
