@@ -1002,6 +1002,15 @@ section .achivements {
     top: 50px;
     font-size: 36px;
   }
+  .crd.one > .about-divs > .ainfo {
+    position: absolute;
+    top: 23%;
+    color: white;
+  }
+
+  .crd.one > .about-divs > img {
+    filter: brightness(47%) contrast(90%);
+  }
   header img {
     height: 70px;
     width: 80px;
@@ -1036,6 +1045,12 @@ section .achivements {
   }
   header.sticky {
     padding-left: 5px;
+  }
+  .crd.four > .desk-div {
+    flex-direction: column;
+  }
+  .crd.four > h1 {
+    padding-top: 0;
   }
 }
 
