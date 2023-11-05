@@ -18,24 +18,43 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 150px;
+  padding: 15px 120px 0 50px;
   transition: 0.5s ease;
   width: 100vw;
 }
 
 header.sticky {
   background: #fff;
+  opacity: 0.7;
   position: sticky;
   color: #000;
   padding: 10px 150px;
   transition: 0.4s ease;
 }
 
+header > .lg{
+  margin-left: 0;
+  line-height: 50px;
+}
+header > .lg > h1{
+  color: #2696e9;
+  text-shadow: 0.05em 0.05em 0 white;
+  font-size: 35px;
+}
+header > .lg > h3{
+ color: orange;
+ font-size: 18px;
+}
+
 header.sticky .navigation .navigation-items a {
   color: #000;
 }
 
-header.sticky img {
+header.sticky{
+  padding: 15px 120px 0 50px;
+}
+
+header.sticky > img {
   width: 90px;
   height: 80px;
 }
@@ -97,8 +116,8 @@ section .home {
 }
 
 header img {
-  width: 130px;
-  height: 110px;
+  width: 120px;
+  height: 100px;
 }
 
 .home {
@@ -356,7 +375,7 @@ button:hover{
   height: 500px;
 }
 
-.crd {
+.crd{
   width: 100vw;
   height: 100vh;
   background: rgb(20, 50, 100, 0.8);
@@ -450,7 +469,7 @@ button:hover{
 
 .crd.three > h1 {
   position: absolute;
-  top: 70px;
+  top: 60px;
   font-size: 30px;
 }
 
@@ -566,10 +585,10 @@ section .achivements {
   top: 0;
 }
 
-.image-slider .slide img {
+.image-slider .t-slide img {
   /* margin: auto; */
   width: 500px;
-  z-index: 2;
+  z-index: 5;
   border-radius: 5px;
   height: 500px;
   object-fit: cover;
@@ -583,26 +602,31 @@ section .achivements {
   width: 100vw;
 }
 
-.image-slider .slide {
+/* .crd.three > h1{
+  display: grid;
+  grid-template-columns: 1fr;
+  /* padding-top: 230px; */
+/* } */
+/* .image-slider .t-slide {
   z-index: 1;
-  position: absolute;
+  position: absolute; */
   /* width: 100%; */
-  clip-path: circle(0% at 0 50%);
+  /* clip-path: circle(0% at 0 50%);
 }
 
-.image-slider .slide.active {
+.image-slider .t-slide.active {
   clip-path: circle(150% at 0 50%);
   transition: 2s;
   transition-property: clip-path;
 }
 
-.image-slider .slide .info {
+.image-slider .t-slide .t-info {
   position: absolute;
   top: 0;
-  padding: 15px 30px;
-}
+  
+} */
 
-.image-slider .slide .info h2 {
+/* .image-slider .t-slide .t-info h2 {
   color: #fff;
   text-shadow: 0.09em 0.08em 0 black;
   font-size: 30px;
@@ -611,17 +635,23 @@ section .achivements {
   letter-spacing: 2px;
 }
 
-.image-slider .slide .info h2.hostel {
+.crd.three > h1{
+  color: red;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.image-slider > .t-slide > .t-info > h2.hostel {
   color: #000;
   text-shadow: 0.025em 0.09em 0 blue;
 }
 
-.image-slider .slide .info h2.lib {
+.image-slider .t-slide .t-info h2.lib {
   color: #fff;
   text-shadow: 0.09em 0.09em 0 black, 0.05em 0.05em 0 black;
 }
 
-.image-slider .slide .info p {
+.image-slider .t-slide .t-info p {
   color: #000;
   text-shadow: 0.025em 0.05em 0 white;
   font-size: 18px;
@@ -629,7 +659,7 @@ section .achivements {
   font-weight: 600;
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.3);
-}
+} */
 
 .image-slider .nav {
   z-index: 2;
@@ -639,6 +669,25 @@ section .achivements {
   left: 50%;
   transform: translateX(-50%);
 }
+
+.image-slider .t-slide{
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+}
+
+.image-slider .t-slide .t-info{
+  position: absolute;
+  top: 0;
+  color: #000;
+  left: 30%;
+  width: 40x;
+}
+
+/* .image-slider .t-slide .t-info p{
+  width: 40%;
+
+} */
 
 .image-slider .nav .bt {
   background: rgba(255, 255, 255, 0.5);
@@ -652,6 +701,16 @@ section .achivements {
 .image-slider .nav .bt.active {
   background: #2696e9;
   border: 2px solid white;
+}
+
+/* .image-slider .t-slide .t-info{
+  top: 10px;
+  color: #fff;
+} */
+
+/* testimonial */
+.four{
+  background-color: #fff;
 }
 
 @media (max-width: 1040px) {
@@ -708,6 +767,7 @@ section .achivements {
 
   header .navigation.active .navigation-items {
     background: #fff;
+    opacity: 1;
     width: 600px;
     max-width: 600px;
     margin: 20px;
@@ -717,6 +777,10 @@ section .achivements {
     align-items: center;
     border-radius: 5px;
     box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+  }
+
+  header.sticky .navigation.active .navigation-items{
+    opacity: 1;
   }
 
   header.sticky .menu-btn {
@@ -736,8 +800,9 @@ section .achivements {
 
   .menu-btn {
     color: white;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
+    font-size: 60px;
     display: block;
     cursor: pointer;
     transition: 0.3s ease;
@@ -753,16 +818,106 @@ section .achivements {
     height: 300px;
   }
 
+
   .crd.two > h1 {
     position: absolute;
     top: 70px;
     font-size: 40px;
     margin: 0 20px;
   }
-  .crd.three > .image-slider > .nav {
+  /* .crd.three > .image-slider > .nav {
     margin-top: 100px;
-  }
+  } */
 }
+/* 
+
+.image-slider .t-slide img{
+  width: 500px;
+  z-index: 2;
+  border-radius: 5px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.image-slider{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.image-slider .t-slide{
+  z-index: 1;
+  position: absolute;
+  clip-path: circle(0% at 0 50%);
+}
+
+.image-slider .t-slide.active{
+  clip-path: circle(150% at 0 50%);
+  transition: 2s;
+  transition-property: clip-path;
+}
+
+.image-slider .t-slide .t-info{
+  position: absolute;
+  top: 0;
+  padding: 15px 30px;
+}
+
+.image-slider .t-slide .t-info h2{
+  color: #fff;
+  text-shadow: 0.09em 0.08em 0 black;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.image-slider .t-slide .t-info h2.hostel{
+  color: #000;
+  text-shadow: 0.025em 0.09em 0 blue;
+}
+
+.image-slider .t-slide .t-info h2.lib{
+  color: #fff;
+  text-shadow: 0.09em 0.09em 0 black, 0.05em 0.05em 0 black;
+}
+
+
+
+.image-slider .t-slide .t-info p{
+  color: #000;
+  text-shadow: 0.025em 0.05em 0 white;
+  font-size: 18px;
+  width: 60%;
+  font-weight: 600;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.image-slider .nav{
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.image-slider .nav .bt{
+  background: rgba(255, 255, 255, 0.5);
+  width: 12px;
+  height: 12px;
+  margin: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.image-slider .nav .bt.active{
+  background: #2696E9;
+  border: 2px solid white;
+} */
 
 /* kunals css */
 
@@ -852,11 +1007,39 @@ section .achivements {
     padding: 10px;
     border-radius: 20px;
   }
+  header > .lg > h1{
+    font-size: 30px;
+  }
+  header > .lg > h3{
+    font-size: 20px;
+  }
+  header > .lg{
+    line-height: 25px;
+    padding-left: 5px;
+  }
+  header.sticky{
+    padding-left: 5px;
+  }
 }
 
 @media (max-width: 400px) {
-  .image-slider .slide img {
+  .image-slider .t-slide img {
     padding: 5px;
     width: 350px;
+  }
+  header > .lg > h1{
+    font-size: 20px;
+  }
+  header > .lg > h3{
+    font-size: 15px;
+  }
+  header > .lg{
+    line-height: 25px;
+    padding-left: 5px;
+  }
+  .image-slider .t-slide .t-info{
+    margin-right: 200px;
+    padding: 0;
+    /* text-align: center; */
   }
 }
