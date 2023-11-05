@@ -19,6 +19,7 @@ header {
   align-items: center;
   padding: 15px 150px;
   transition: 0.5s ease;
+  width: 100vw;
 }
 
 header.sticky {
@@ -224,7 +225,8 @@ button:hover{
   margin-bottom: 12px;
 }
 
-.slider-navigation .nav-btn {
+.slider-navigation .nav-btn,
+.c-nav-btn {
   width: 12px;
   height: 12px;
   background: #fff;
@@ -234,7 +236,8 @@ button:hover{
   transition: 0.3s ease;
 }
 
-.slider-navigation .nav-btn.active {
+.slider-navigation .nav-btn.active,
+.c-nav-btn.active {
   background: #2696e9;
   width: 12px;
   height: 12px;
@@ -242,21 +245,25 @@ button:hover{
   border: 2px solid white;
 }
 
-.slider-navigation .nav-btn:not(:last-child) {
+.slider-navigation .nav-btn:not(:last-child),
+.c-nav-btn:not(:last-child) {
   margin-right: 20px;
 }
 
-.slider-navigation .nav-btn:hover {
+.slider-navigation .nav-btn:hover,
+.c-nav-btn:hover {
   transform: scale(1.2);
 }
 
-.video-slide {
+.video-slide,
+.slide {
   position: absolute;
   width: 100%;
   clip-path: circle(0% at 0 50%);
 }
 
-.video-slide.active {
+.video-slide.active,
+.slide.active {
   clip-path: circle(150% at 0 50%);
   transition: 2s ease;
   transition-property: clip-path;
@@ -278,6 +285,13 @@ button:hover{
 
 .crd.two {
   background-color: rgb(84, 125, 209);
+}
+
+.crd.two > h1 {
+  font-size: 50px;
+  margin-left: -60px;
+  margin-bottom: -50px;
+  margin-right: 30px;
 }
 
 .crd.two h4 {
@@ -375,6 +389,7 @@ section .achivements {
   text-decoration: none;
   color: white;
 }
+
 .fcontainer ul li {
   list-style: none;
 }
@@ -528,7 +543,7 @@ section .achivements {
   width: 400px;
   min-width: 200px;
   height: auto;
-  flex: 1 1 auto;
+  /* flex: 1 1 auto; */
 }
 
 .crd.one > h1 {
