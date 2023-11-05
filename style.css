@@ -312,30 +312,29 @@ button:hover{
   padding-left: 10px;
 }
 
-section .achivements{
+section .achivements {
   background-color: white;
   width: 100%;
   height: 600px;
 }
 
-.achive{
+.achive {
   width: 100%;
   height: 600px;
 }
 
-.footer{
+.footer {
   width: 100vw;
-  height: 300px;
+  /* height: 300px; */
   background-color: #0b509d;
   color: white;
 }
-.container{
+.container {
   display: grid;
   padding-top: 20px;
   grid-template-columns: 1fr 0.5fr 1fr 1fr;
+  gap: 50px;
 }
-
-
 
 .two {
   background-color: rgb(176, 229, 199);
@@ -344,40 +343,39 @@ section .achivements{
   background-color: #cdf5fd;
 }
 
-.container a{
+.container a {
   text-decoration: none;
   color: white;
 }
-.container ul li{
+.container ul li {
   list-style: none;
 }
 
-.container span{
+.container span {
   margin-right: 4px;
   font-size: 10px;
 }
 
-.bottom{
+.bottom {
   display: flex;
   justify-content: center;
   padding-top: 80px;
 }
 
-.arrow{
+.arrow {
   height: 50px;
   width: 50px;
   background-color: white;
   border: 4px solid #362fd9;
   border-radius: 5px;
 }
-.arrow i{
+.arrow i {
   color: #362fd9;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 17px;
 }
-
 
 @media (max-width: 1040px) {
   header {
@@ -533,17 +531,22 @@ section .achivements{
     top: 50px;
     font-size: 36px;
   }
-  header img{
+  header img {
     height: 70px;
     width: 80px;
   }
-  .home .content.active h1{
+  .home .content.active h1 {
     font-size: 40px !important;
   }
-  .home .content.active span{
-    font-size: 40px ;
+  .home .content.active span {
+    font-size: 40px;
   }
-  .home .content.active p{
+  .home .content.active p {
     line-height: 1.2;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
   }
 }
