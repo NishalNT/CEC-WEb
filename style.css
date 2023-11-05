@@ -312,13 +312,30 @@ button:hover{
   padding-left: 10px;
 }
 
-.footer {
-  background-color: #362fd9;
-  color: white;
-  font-size: 40px;
-  width: 100vw;
-  height: 400px;
+section .achivements{
+  background-color: white;
+  width: 100%;
+  height: 600px;
 }
+
+.achive{
+  width: 100%;
+  height: 600px;
+}
+
+.footer{
+  width: 100vw;
+  height: 300px;
+  background-color: #0b509d;
+  color: white;
+}
+.container{
+  display: grid;
+  padding-top: 20px;
+  grid-template-columns: 1fr 0.5fr 1fr 1fr;
+}
+
+
 
 .two {
   background-color: rgb(176, 229, 199);
@@ -326,6 +343,42 @@ button:hover{
 .one {
   background-color: #cdf5fd;
 }
+
+.container a{
+  text-decoration: none;
+  color: white;
+}
+.container ul li{
+  list-style: none;
+}
+
+.container span{
+  margin-right: 4px;
+  font-size: 10px;
+}
+
+.bottom{
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.arrow{
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  border: 4px solid #362fd9;
+  border-radius: 5px;
+}
+.arrow i{
+  color: #362fd9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 17px;
+}
+
+
 @media (max-width: 1040px) {
   header {
     padding: 12px 20px;
