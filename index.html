@@ -95,22 +95,43 @@
             <h4>Courses Offered</h2>
                 <img src="images/course.png" alt="png">
         </div>
-        <div class="card three image-slider">
-
-        </div>
+        <div class="card1 three">
+            <div class="image-slider">
+                <div class="slide active">
+                    <img src="images/canCafe.jpg" alt="jpg">
+                    <div class="info">
+                        <h2>CanCafe</h2>
+                        <p>A aesthetic cafe which serves good food</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/hostel.jpg" alt="jpg">
+                    <div class="info th">
+                        <h2 class="hostel">Hostel</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, veritatis!</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/lib.jpg" alt="jpg">
+                    <div class="info th">
+                        <h2 class="lib">Library</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, veritatis!</p>
+                    </div>
+                </div>
+                <div class="nav">
+                    <div class="bt active"></div>
+                    <div class="bt"></div>
+                    <div class="bt"></div>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="testimonials">
         <!-- <h3>Testimonials</h3> -->
-        <div class="test active"><img src="images/flower.avif" alt="avif"></div>
+        <!-- <div class="test active"><img src="images/flower.avif" alt="avif"></div>
         <div class="test"><img src="images/canCafe.jpg" alt="jpg"></div>
-        <div class="test"><img src="images/flower.avif" alt="avif"></div>
-        <div class="slider-navigation1">
-            <div class="nav-btn active"></div>
-            <div class="nav-btn"></div>
-            <div class="nav-btn"></div>
-        </div>
+        <div class="test"><img src="images/flower.avif" alt="avif"></div> -->
     </section>
 
     <footer class="footer">
@@ -206,10 +227,6 @@
                 btn.classList.remove("active");
             });
 
-            test.forEach((btn) => {
-                btn.classList.remove("active");
-            });
-
             slides.forEach((slide) => {
                 slide.classList.remove("active");
             });
@@ -221,7 +238,6 @@
 
 
             btns[manual].classList.add("active");
-            test[manual].classList.add("active");
             slides[manual].classList.add("active");
             contents[manual].classList.add("active");
         }
@@ -284,6 +300,58 @@
             var header = document.querySelector("header");
             header.classList.toggle("sticky", window.scrollY > 0);
         })
+
+        //facilities
+        var slide = document.querySelectorAll('.slide');
+        var btn = document.querySelectorAll('.bt');
+
+        var manualNav = function (manual) {
+            slide.forEach((slide) => {
+                slide.classList.remove('active')
+            });
+            btn.forEach((bt) => {
+                bt.classList.remove('active')
+            });
+
+            slide[manual].classList.add('active');
+            btn[manual].classList.add('active');
+        }
+        let slider = 1;
+
+        btn.forEach((bt, i) => {
+            bt.addEventListener("click", () => {
+                manualNav(i);
+                slider = i;
+            });
+        });
+
+        var repeat = function (activeClass) {
+            let active = document.getElementsByClassName('active');
+            let i = 1;
+            var repeater = () => {
+                setTimeout(function () {
+                    slide.forEach((slide) => {
+                        slide.classList.remove('active')
+                    });
+                    btn.forEach((bt) => {
+                        bt.classList.remove('active')
+                    });
+                    slide[i].classList.add('active');
+                    btn[i].classList.add('active');
+                    i++;
+
+                    if (slide.length == i) {
+                        i = 0;
+                    }
+                    if (i >= slide.length) {
+                        return;
+                    }
+                    repeater();
+                }, 10000);
+            }
+            repeater();
+        }
+        repeat();
 
     </script>
     <script src="https://kit.fontawesome.com/1373b730aa.js" crossorigin="anonymous"></script>

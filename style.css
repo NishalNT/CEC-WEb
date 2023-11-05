@@ -490,7 +490,111 @@ section .achivements {
 .three h4 {
   /* display: flex;
     justify-content: center;
-    align-items: center; */
+    align-items: center; 
+*/
+
+.card1{
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  position: sticky;
+  top: 0;
+}
+
+.image-slider .slide img{
+  /* margin: auto; */
+  width: 500px;
+  z-index: 2;
+  border-radius: 5px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.image-slider{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.image-slider .slide{
+  z-index: 1;
+  position: absolute;
+  /* width: 100%; */
+  clip-path: circle(0% at 0 50%);
+}
+
+.image-slider .slide.active{
+  clip-path: circle(150% at 0 50%);
+  transition: 2s;
+  transition-property: clip-path;
+}
+
+.image-slider .slide .info{
+  position: absolute;
+  top: 0;
+  padding: 15px 30px;
+}
+
+.image-slider .slide .info h2{
+  color: #fff;
+  text-shadow: 0.09em 0.08em 0 black;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.image-slider .slide .info h2.hostel{
+  color: #000;
+  text-shadow: 0.025em 0.09em 0 blue;
+}
+
+.image-slider .slide .info h2.lib{
+  color: #fff;
+  text-shadow: 0.09em 0.09em 0 black, 0.05em 0.05em 0 black;
+}
+
+
+
+.image-slider .slide .info p{
+  color: #000;
+  text-shadow: 0.025em 0.05em 0 white;
+  font-size: 18px;
+  width: 60%;
+  font-weight: 600;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.image-slider .nav{
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.image-slider .nav .bt{
+  background: rgba(255, 255, 255, 0.5);
+  width: 12px;
+  height: 12px;
+  margin: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.image-slider .nav .bt.active{
+  background: #2696E9;
+  border: 2px solid white;
+}
 
 @media (max-width: 1040px) {
   header {
@@ -665,4 +769,15 @@ section .achivements {
     gap: 30px;
     padding: 20px;
   }
+  .image-slider .slide img{
+    padding: 10px;
+    border-radius: 20px;
+  }
 }
+
+@media (max-width: 400px){
+  .image-slider .slide img{
+    padding: 5px;
+    width: 350px;
+  }
+} 
