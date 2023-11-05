@@ -3,6 +3,7 @@
 * {
   font-family: "Poppins", sans-serif;
   margin: 0;
+  font-size: 1rem;
   padding: 0;
   box-sizing: border-box;
 }
@@ -213,6 +214,87 @@ button:hover{
   object-fit: cover;
 }
 
+.testimonials{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 100vw;
+}
+/* 
+.testimonials h3{
+  z-index: 999;
+  margin-left: 120px;
+  padding-bottom: 450px;
+  font-size: 20px;
+} */
+
+.testimonials img{
+  height: 400px;
+  position: absolute;
+  z-index: 000;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin-left: 130px;
+}
+
+.test{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.slider-navigation1{
+  z-index: 888;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(80px);
+  margin-left: 40px;
+  margin-top: 200px;
+}
+
+.slider-navigation1 .nav-btn {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+  transition: 0.3s ease;
+}
+
+.slider-navigation1 .nav-btn.active {
+  background: #2696e9;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.slider-navigation1 .nav-btn:not(:last-child) {
+  margin-right: 20px;
+}
+
+.slider-navigation1 .nav-btn:hover {
+  transform: scale(1.2);
+}
+
+.video-slide {
+  position: absolute;
+  width: 100%;
+  clip-path: circle(0% at 0 50%);
+}
+
+.video-slide.active {
+  clip-path: circle(150% at 0 50%);
+  transition: 2s ease;
+  transition-property: clip-path;
+}
+
 .slider-navigation {
   z-index: 888;
   position: relative;
@@ -376,6 +458,39 @@ section .achivements {
   align-items: center;
   padding-top: 17px;
 }
+
+.three{
+  background-color: #E5D4FF;
+  color: #000;
+}
+
+/* .three .box{
+  display: flex;
+  flex-direction: column;
+} */
+/* 
+.slide-1{
+  height: 400px;
+  width: 500px;
+  background-color: red;
+}
+
+.slides{
+  background-color: blue;
+  width: 100%;
+  height: 400px;
+}
+
+
+.slide-1 .slides img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.three h4 {
+  /* display: flex;
+    justify-content: center;
+    align-items: center; */
 
 @media (max-width: 1040px) {
   header {
