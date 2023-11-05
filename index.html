@@ -195,6 +195,7 @@
         </div>
       </div>
       <div class="crd three">
+        <h1>Our Facilities</h1>
         <div class="image-slider">
           <div class="t-slide active">
             <img src="images/canCafe.jpg" alt="jpg" />
@@ -518,56 +519,59 @@
         header.classList.toggle("sticky", window.scrollY > 0);
       });
       //facilities
-      var slide = document.querySelectorAll(".t-slide");
-      var btn = document.querySelectorAll(".bt");
+      function f_scroll() {
+        var slide = document.querySelectorAll(".t-slide");
+        var btn = document.querySelectorAll(".bt");
 
-      var manualNav = function (manual) {
-        slide.forEach((slide) => {
-          slide.classList.remove("active");
-        });
-        btn.forEach((bt) => {
-          bt.classList.remove("active");
-        });
+        var manualNav = function (manual) {
+          slide.forEach((slide) => {
+            slide.classList.remove("active");
+          });
+          btn.forEach((bt) => {
+            bt.classList.remove("active");
+          });
 
-        slide[manual].classList.add("active");
-        btn[manual].classList.add("active");
-      };
-      let slider = 1;
-
-      btn.forEach((bt, i) => {
-        bt.addEventListener("click", () => {
-          manualNav(i);
-          slider = i;
-        });
-      });
-
-      var repeat = function (activeClass) {
-        let active = document.getElementsByClassName("active");
-        let i = 1;
-        var repeater = () => {
-          setTimeout(function () {
-            slide.forEach((slide) => {
-              slide.classList.remove("active");
-            });
-            btn.forEach((bt) => {
-              bt.classList.remove("active");
-            });
-            slide[i].classList.add("active");
-            btn[i].classList.add("active");
-            i++;
-
-            if (slide.length == i) {
-              i = 0;
-            }
-            if (i >= slide.length) {
-              return;
-            }
-            repeater();
-          }, 10000);
+          slide[manual].classList.add("active");
+          btn[manual].classList.add("active");
         };
-        repeater();
-      };
-      repeat();
+        let slider = 1;
+
+        btn.forEach((bt, i) => {
+          bt.addEventListener("click", () => {
+            manualNav(i);
+            slider = i;
+          });
+        });
+
+        var repeat = function (activeClass) {
+          let active = document.getElementsByClassName("active");
+          let i = 1;
+          var repeater = () => {
+            setTimeout(function () {
+              slide.forEach((slide) => {
+                slide.classList.remove("active");
+              });
+              btn.forEach((bt) => {
+                bt.classList.remove("active");
+              });
+              slide[i].classList.add("active");
+              btn[i].classList.add("active");
+              i++;
+
+              if (slide.length == i) {
+                i = 0;
+              }
+              if (i >= slide.length) {
+                return;
+              }
+              repeater();
+            }, 3000);
+          };
+          repeater();
+        };
+        repeat();
+      }
+      f_scroll();
     </script>
     <script
       src="https://kit.fontawesome.com/1373b730aa.js"

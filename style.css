@@ -216,7 +216,7 @@ button:hover{
   object-fit: cover;
 }
 
-.testimonials{
+.testimonials {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -231,7 +231,7 @@ button:hover{
   font-size: 20px;
 } */
 
-.testimonials img{
+.testimonials img {
   height: 400px;
   position: absolute;
   z-index: 000;
@@ -241,14 +241,13 @@ button:hover{
   margin-left: 130px;
 }
 
-.test{
+.test {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
-.slider-navigation1{
+.slider-navigation1 {
   z-index: 888;
   position: relative;
   display: flex;
@@ -338,17 +337,23 @@ button:hover{
 }
 
 .video-slide,
-.slide {
+.slide,
+.t-slide {
   position: absolute;
   width: 100%;
   clip-path: circle(0% at 0 50%);
 }
 
 .video-slide.active,
-.slide.active {
+.slide.active,
+.t-slide.active {
   clip-path: circle(150% at 0 50%);
   transition: 2s ease;
   transition-property: clip-path;
+}
+
+.t-slide > img {
+  height: 500px;
 }
 
 .crd {
@@ -438,6 +443,17 @@ button:hover{
   flex-direction: row;
 }
 
+.crd.three {
+  flex-direction: column;
+  padding-top: 60px;
+}
+
+.crd.three > h1 {
+  position: absolute;
+  top: 70px;
+  font-size: 30px;
+}
+
 section .achivements {
   background-color: white;
   width: 100%;
@@ -503,8 +519,8 @@ section .achivements {
   padding-top: 17px;
 }
 
-.three{
-  background-color: #E5D4FF;
+.three {
+  background-color: #e5d4ff;
   color: #000;
 }
 
@@ -537,7 +553,7 @@ section .achivements {
     align-items: center; 
 */
 
-.card1{
+.card1 {
   width: 100vw;
   height: 100vh;
   text-align: center;
@@ -550,7 +566,7 @@ section .achivements {
   top: 0;
 }
 
-.image-slider .slide img{
+.image-slider .slide img {
   /* margin: auto; */
   width: 500px;
   z-index: 2;
@@ -559,7 +575,7 @@ section .achivements {
   object-fit: cover;
 }
 
-.image-slider{
+.image-slider {
   position: relative;
   display: flex;
   justify-content: center;
@@ -567,26 +583,26 @@ section .achivements {
   width: 100vw;
 }
 
-.image-slider .slide{
+.image-slider .slide {
   z-index: 1;
   position: absolute;
   /* width: 100%; */
   clip-path: circle(0% at 0 50%);
 }
 
-.image-slider .slide.active{
+.image-slider .slide.active {
   clip-path: circle(150% at 0 50%);
   transition: 2s;
   transition-property: clip-path;
 }
 
-.image-slider .slide .info{
+.image-slider .slide .info {
   position: absolute;
   top: 0;
   padding: 15px 30px;
 }
 
-.image-slider .slide .info h2{
+.image-slider .slide .info h2 {
   color: #fff;
   text-shadow: 0.09em 0.08em 0 black;
   font-size: 30px;
@@ -595,19 +611,17 @@ section .achivements {
   letter-spacing: 2px;
 }
 
-.image-slider .slide .info h2.hostel{
+.image-slider .slide .info h2.hostel {
   color: #000;
   text-shadow: 0.025em 0.09em 0 blue;
 }
 
-.image-slider .slide .info h2.lib{
+.image-slider .slide .info h2.lib {
   color: #fff;
   text-shadow: 0.09em 0.09em 0 black, 0.05em 0.05em 0 black;
 }
 
-
-
-.image-slider .slide .info p{
+.image-slider .slide .info p {
   color: #000;
   text-shadow: 0.025em 0.05em 0 white;
   font-size: 18px;
@@ -617,7 +631,7 @@ section .achivements {
   background: rgba(255, 255, 255, 0.3);
 }
 
-.image-slider .nav{
+.image-slider .nav {
   z-index: 2;
   position: absolute;
   display: flex;
@@ -626,7 +640,7 @@ section .achivements {
   transform: translateX(-50%);
 }
 
-.image-slider .nav .bt{
+.image-slider .nav .bt {
   background: rgba(255, 255, 255, 0.5);
   width: 12px;
   height: 12px;
@@ -635,8 +649,8 @@ section .achivements {
   cursor: pointer;
 }
 
-.image-slider .nav .bt.active{
-  background: #2696E9;
+.image-slider .nav .bt.active {
+  background: #2696e9;
   border: 2px solid white;
 }
 
@@ -735,6 +749,19 @@ section .achivements {
     width: 40px;
     height: 40px;
   }
+  .t-slide > img {
+    height: 300px;
+  }
+
+  .crd.two > h1 {
+    position: absolute;
+    top: 70px;
+    font-size: 40px;
+    margin: 0 20px;
+  }
+  .crd.three > .image-slider > .nav {
+    margin-top: 100px;
+  }
 }
 
 /* kunals css */
@@ -821,15 +848,15 @@ section .achivements {
     flex-direction: column;
     gap: 30px;
   }
-  .image-slider .slide img{
+  .image-slider .slide img {
     padding: 10px;
     border-radius: 20px;
   }
 }
 
-@media (max-width: 400px){
-  .image-slider .slide img{
+@media (max-width: 400px) {
+  .image-slider .slide img {
     padding: 5px;
     width: 350px;
   }
-} 
+}
