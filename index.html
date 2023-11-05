@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CEC</title>
+    <link rel="shortcut icon" href="images/lll.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -193,11 +194,53 @@
           </div>
         </div>
       </div>
-      <div class="crd three">three</div>
+      <div class="crd three">
+        <div class="image-slider">
+          <div class="t-slide active">
+            <img src="images/canCafe.jpg" alt="jpg" />
+            <div class="info">
+              <h2>CanCafe</h2>
+              <p>A aesthetic cafe which serves good food</p>
+            </div>
+          </div>
+          <div class="t-slide">
+            <img src="images/hostel.jpg" alt="jpg" />
+            <div class="info th">
+              <h2 class="hostel">Hostel</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Tenetur, veritatis!
+              </p>
+            </div>
+          </div>
+          <div class="t-slide">
+            <img src="images/lib.jpg" alt="jpg" />
+            <div class="info th">
+              <h2 class="lib">Library</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Tenetur, veritatis!
+              </p>
+            </div>
+          </div>
+          <div class="nav">
+            <div class="bt active"></div>
+            <div class="bt"></div>
+            <div class="bt"></div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="achivements">
       <div class="achive">hello</div>
+    </section>
+
+    <section class="testimonials">
+      <!-- <h3>Testimonials</h3> -->
+      <!-- <div class="test active"><img src="images/flower.avif" alt="avif"></div>
+        <div class="test"><img src="images/canCafe.jpg" alt="jpg"></div>
+        <div class="test"><img src="images/flower.avif" alt="avif"></div> -->
     </section>
 
     <footer class="footer">
@@ -319,6 +362,7 @@
       function scroll() {
         const btns = document.querySelectorAll(".nav-btn");
         const slides = document.querySelectorAll(".video-slide");
+        const test = document.querySelectorAll(".test");
         const contents = document.querySelectorAll(".content");
 
         let currentSlide = 1;
@@ -352,7 +396,6 @@
           let active = document.getElementsByClassName(".active");
 
           let i = 1;
-
           var repeater = () => {
             setTimeout(function () {
               // [...active].forEach((activeSlide) => {
@@ -363,6 +406,9 @@
               });
               slides.forEach((slide) => {
                 slide.classList.remove("active");
+              });
+              test.forEach((btn) => {
+                btn.classList.remove("active");
               });
               btns.forEach((btn) => {
                 btn.classList.remove("active");
@@ -471,6 +517,57 @@
         var header = document.querySelector("header");
         header.classList.toggle("sticky", window.scrollY > 0);
       });
+      //facilities
+      var slide = document.querySelectorAll(".t-slide");
+      var btn = document.querySelectorAll(".bt");
+
+      var manualNav = function (manual) {
+        slide.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+        btn.forEach((bt) => {
+          bt.classList.remove("active");
+        });
+
+        slide[manual].classList.add("active");
+        btn[manual].classList.add("active");
+      };
+      let slider = 1;
+
+      btn.forEach((bt, i) => {
+        bt.addEventListener("click", () => {
+          manualNav(i);
+          slider = i;
+        });
+      });
+
+      var repeat = function (activeClass) {
+        let active = document.getElementsByClassName("active");
+        let i = 1;
+        var repeater = () => {
+          setTimeout(function () {
+            slide.forEach((slide) => {
+              slide.classList.remove("active");
+            });
+            btn.forEach((bt) => {
+              bt.classList.remove("active");
+            });
+            slide[i].classList.add("active");
+            btn[i].classList.add("active");
+            i++;
+
+            if (slide.length == i) {
+              i = 0;
+            }
+            if (i >= slide.length) {
+              return;
+            }
+            repeater();
+          }, 10000);
+        };
+        repeater();
+      };
+      repeat();
     </script>
     <script
       src="https://kit.fontawesome.com/1373b730aa.js"
