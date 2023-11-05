@@ -480,4 +480,17 @@ button:hover{
     top: 50px;
     font-size: 36px;
   }
+  header img{
+    height: 70px;
+    width: 80px;
+  }
+  .home .content.active h1{
+    font-size: 40px !important;
+  }
+  .home .content.active span{
+    font-size: 40px ;
+  }
+  .home .content.active p{
+    line-height: 1.2;
+  }
 }

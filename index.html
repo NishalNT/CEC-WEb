@@ -115,10 +115,19 @@
     <script>
         const menuBtn = document.querySelector(".menu-btn");
         const navigation = document.querySelector(".navigation");
+        const nav = document.querySelector(".navigation-items");
+        const i = document.querySelector(".fa-bars");
 
         menuBtn.addEventListener("click", () => {
             menuBtn.classList.toggle("active");
             navigation.classList.toggle("active");
+            nav.classList.toggle("active");
+        });
+
+        nav.addEventListener("click", () => {
+            navigation.classList.remove("active");
+            nav.classList.remove("active");
+            i.classList.toggle("fa-x");
         });
 
         let changeIcon = function (icon) {
