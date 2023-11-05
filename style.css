@@ -329,7 +329,7 @@ section .achivements {
   background-color: #0b509d;
   color: white;
 }
-.container {
+.fcontainer {
   display: grid;
   padding-top: 20px;
   grid-template-columns: 1fr 0.5fr 1fr 1fr;
@@ -343,15 +343,15 @@ section .achivements {
   background-color: #cdf5fd;
 }
 
-.container a {
+.fcontainer a {
   text-decoration: none;
   color: white;
 }
-.container ul li {
+.fcontainer ul li {
   list-style: none;
 }
 
-.container span {
+.fcontainer span {
   margin-right: 4px;
   font-size: 10px;
 }
@@ -544,9 +544,10 @@ section .achivements {
   .home .content.active p {
     line-height: 1.2;
   }
-  .container {
+  .fcontainer {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    padding: 20px;
   }
 }
