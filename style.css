@@ -629,7 +629,7 @@ section .achivements {
   
 } */
 
-/* .image-slider .t-slide .t-info h2 {
+.image-slider .t-slide .t-info h2 {
   color: #fff;
   text-shadow: 0.09em 0.08em 0 black;
   font-size: 30px;
@@ -662,7 +662,7 @@ section .achivements {
   font-weight: 600;
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.3);
-} */
+}
 
 .image-slider .nav {
   z-index: 2;
@@ -679,12 +679,14 @@ section .achivements {
   width: 100%;
 }
 
-.image-slider .t-slide .t-info {
+.image-slider > .t-slide > .t-info {
   position: absolute;
   top: 0;
   color: #000;
-  left: 30%;
-  width: 40x;
+  left: 35%;
+  padding-top: 5px;
+  text-align: left;
+  width: 20%;
 }
 
 /* .image-slider .t-slide .t-info p{
@@ -702,13 +704,13 @@ section .achivements {
 }
 
 .image-slider .nav .bt.active {
-  background: #2696e9;
+  background: #65bcff;
   border: 2px solid white;
 }
 
 .crd.four {
   display: block;
-  background-color: #4e4ba9;
+  background-color: #9796e2;
   height: 80%;
   padding: 120px;
 }
@@ -1054,7 +1056,17 @@ section .achivements {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px){
+  .image-slider > .t-slide > img {
+    width: 400px; 
+  }
+  .image-slider > .t-slide > .t-info > p{
+    width: 120px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 445px) {
   .image-slider .t-slide img {
     padding: 5px;
     width: 350px;
@@ -1069,9 +1081,14 @@ section .achivements {
     line-height: 25px;
     padding-left: 5px;
   }
-  .image-slider .t-slide .t-info {
-    margin-right: 200px;
-    padding: 0;
-    /* text-align: center; */
+  .image-slider > .t-slide > .t-info > p{
+    width: 100px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 336px){
+  .image-slider > .t-slide > img {
+    width: 300px; 
   }
 }
